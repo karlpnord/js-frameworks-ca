@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FaBars, FaCartShopping, FaX } from "react-icons/fa6";
+import { useState } from 'react';
+import { FaBars, FaCartShopping, FaX, FaStore } from "react-icons/fa6";
 import NavList from './NavList';
 import { Link } from 'react-router-dom';
 
@@ -11,21 +11,20 @@ const Header = () => {
   }
 
   return (
-    <header className='border-b border-gray-200 relative dark:bg-zinc-800 dark:border-gray-400'>
-      <nav className='container mx-auto flex justify-between items-center py-6 px-4 '>
-        <Link to='/' className='font-bold text-2xl text-gray-800 font-inter dark:text-gray-100'>E-Com</Link>
+    <header className='border-b border-gray-300 relative dark:bg-zinc-800 dark:border-gray-700'>
+      <nav className='container mx-auto flex justify-between items-center py-6 px-4'>
+        <Link to='/' className='flex items-center gap-2'>
+          <FaStore className='text-3xl text-blue-600'/>
+          <span className='font-bold text-2xl font-inter text-gray-800  dark:text-gray-300'>E-Com</span>
+        </Link>
         <NavList navbarOpen={navbar}/>
         <div className='flex gap-4'>
-          <button onClick={toggleNavbar}>
-            {navbar ? (
-              <FaX className='text-2xl text-gray-700 dark:text-gray-100'/>
-            ) : (
-              <FaBars className='text-2xl text-gray-700 dark:text-gray-100'/>
-            )}
+          <button onClick={toggleNavbar} className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'>
+            {navbar ? <FaX/> : <FaBars/>}
           </button>
-          <Link to='/cart' className='flex items-center border-l border-gray-300 pl-4'>
-            <FaCartShopping className='text-2xl text-gray-700 dark:text-gray-100'/>
-            <span className='text-xl font-semibold ml-1 text-gray-800 font-inter dark:text-gray-100'>0</span>
+          <Link to='/cart' className='flex items-center pl-4 border-l border-gray-300 dark:border-gray-700'>
+            <FaCartShopping className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'/>
+            <span className='text-xl font-semibold ml-1 text-gray-800 font-inter dark:text-gray-300'>0</span>
           </Link>
         </div>
       </nav>
