@@ -17,12 +17,12 @@ const Header = () => {
           <FaStore className='text-3xl text-blue-600'/>
           <span className='font-bold text-2xl font-inter text-gray-800  dark:text-gray-300'>E-Com</span>
         </Link>
-        <NavList navbarOpen={navbar}/>
+        <NavList navbarOpen={navbar} toggleNavbar={toggleNavbar}/>
         <div className='flex gap-4'>
           <button onClick={toggleNavbar} className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'>
             {navbar ? <FaX/> : <FaBars/>}
           </button>
-          <Link to='/cart' className='flex items-center pl-4 border-l border-gray-300 dark:border-gray-700'>
+          <Link to='/checkout' className='flex items-center pl-4 border-l border-gray-300 dark:border-gray-700'>
             <FaCartShopping className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'/>
             <span className='text-xl font-semibold ml-1 text-gray-800 font-inter dark:text-gray-300'>0</span>
           </Link>
