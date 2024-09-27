@@ -5,7 +5,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const ProductCard = ({ data }) => {
   return (
-    <Link to={`products/${data.id}`} className="w-72 h-fit bg-white border font-inter border-gray-200 shadow-sm dark:bg-zinc-900 dark:border-zinc-700 hover:shadow-xl hover:border-gray-400 hover:scale-105 transition">
+    <Link to={`products/${data.id}`} className="min-w-60 sm:w-80 h-fit bg-zinc-100 border font-inter border-gray-200 shadow-sm dark:bg-zinc-900 dark:border-zinc-700 hover:shadow-xl hover:border-gray-400 hover:scale-105 transition">
       <img className='max-h-64 min-w-full object-cover' src={data.image.url} alt={data.title}/>
       <div className="p-4">
         <span className='text-sm uppercase opacity-60 dark:text-gray-300'>{data.tags[0]}</span>
