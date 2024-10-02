@@ -10,10 +10,7 @@ const ProductCard = ({ data }) => {
       <div className="p-4">
         <span className='text-sm uppercase opacity-60 dark:text-gray-300'>{data.tags[0]}</span>
         <h5 className="text-xl font-semibold mt-2 tracking-tight text-gray-900 dark:text-gray-50">{data.title}</h5>
-        <div className="flex items-center mb-4 mt-1">
-          <RatingStars rating={data.rating.toFixed(0)}/>
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{data.rating.toFixed(1)}</span>
-        </div>
+        <RatingStars rating={data.rating}/>
         <div className='flex justify-between items-center'>
           {data.discountedPrice !== data.price ? (
             <div className='flex items-center gap-2'>
