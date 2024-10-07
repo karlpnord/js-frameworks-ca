@@ -1,5 +1,5 @@
 import RatingStars from './RatingStars';
-import Button from './Button';
+import Button from './ui/Button';
 import Reviews from './Reviews';
 import { FaCartPlus } from "react-icons/fa6";
 import { useState } from 'react';

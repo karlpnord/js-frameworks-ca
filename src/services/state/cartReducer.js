@@ -1,7 +1,10 @@
+import { calculateTotals } from '../../utils/calculateTotals';
+
 const cartReducer = (state, action) => {
   let productIndex;
   let newTotalPrice;
   let newTotalProducts;
+  let totals;
   let cart;
 
   switch (action.type) {
@@ -19,14 +22,9 @@ const cartReducer = (state, action) => {
         ];
       }
 
-      newTotalProducts = cart.reduce((prevValue, currentValue) => {
-        return (prevValue += currentValue.quantity);
-      }, 0);
-
-      newTotalPrice = cart.reduce((currentTotal, product) => {
-        currentTotal += product.discountedPrice * product.quantity;
-        return currentTotal;
-      }, 0);
+      totals = calculateTotals(cart);
+      newTotalProducts = totals.totalProducts;
+      newTotalPrice = totals.totalPrice;
 
       return { ...state, cart: cart, totalPrice: newTotalPrice, totalProducts: newTotalProducts };
 
@@ -38,14 +36,9 @@ const cartReducer = (state, action) => {
         cart = [...cart.slice(0, productIndex), ...cart.slice(productIndex + 1)];
       }
 
-      newTotalProducts = cart.reduce((prevValue, currentValue) => {
-        return (prevValue += currentValue.quantity);
-      }, 0);
-
-      newTotalPrice = cart.reduce((currentTotal, product) => {
-        currentTotal += product.discountedPrice * product.quantity;
-        return currentTotal;
-      }, 0);
+      totals = calculateTotals(cart);
+      newTotalProducts = totals.totalProducts;
+      newTotalPrice = totals.totalPrice;
 
       return { ...state, cart: cart, totalPrice: newTotalPrice, totalProducts: newTotalProducts };
 
@@ -59,14 +52,9 @@ const cartReducer = (state, action) => {
         ...cart.slice(productIndex + 1),
       ];
 
-      newTotalProducts = cart.reduce((prevValue, currentValue) => {
-        return (prevValue += currentValue.quantity);
-      }, 0);
-
-      newTotalPrice = cart.reduce((currentTotal, product) => {
-        currentTotal += product.discountedPrice * product.quantity;
-        return currentTotal;
-      }, 0);
+      totals = calculateTotals(cart);
+      newTotalProducts = totals.totalProducts;
+      newTotalPrice = totals.totalPrice;
 
       return { ...state, cart: cart, totalPrice: newTotalPrice, totalProducts: newTotalProducts };
 
@@ -82,14 +70,9 @@ const cartReducer = (state, action) => {
         return item;
       });
 
-      newTotalProducts = cart.reduce((prevValue, currentValue) => {
-        return (prevValue += currentValue.quantity);
-      }, 0);
-
-      newTotalPrice = cart.reduce((currentTotal, product) => {
-        currentTotal += product.discountedPrice * product.quantity;
-        return currentTotal;
-      }, 0);
+      totals = calculateTotals(cart);
+      newTotalProducts = totals.totalProducts;
+      newTotalPrice = totals.totalPrice;
 
       const hasPendingRemoval = cart.some((item) => item.isPendingRemoval && item.quantity === 1);
 
@@ -103,14 +86,9 @@ const cartReducer = (state, action) => {
     case 'CONFIRM_REMOVE_ITEM':
       cart = state.cart.filter((item) => item.id !== action.payload.id);
 
-      newTotalProducts = cart.reduce((prevValue, currentValue) => {
-        return (prevValue += currentValue.quantity);
-      }, 0);
-
-      newTotalPrice = cart.reduce((currentTotal, product) => {
-        currentTotal += product.discountedPrice * product.quantity;
-        return currentTotal;
-      }, 0);
+      totals = calculateTotals(cart);
+      newTotalProducts = totals.totalProducts;
+      newTotalPrice = totals.totalPrice;
 
       return { ...state, cart: cart, totalPrice: newTotalPrice, totalProducts: newTotalProducts };
 

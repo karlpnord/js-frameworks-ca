@@ -1,7 +1,7 @@
 import SearchAutoComplete from "../../components/form/SearchAutoComplete";
 import { useApi } from "../../hooks/useApi";
 import ProductContainer from "../../components/ProductContainer";
-import Loader from "../../components/Loader";
+import Loader from "../../components/ui/Loader";
 import { useState } from 'react';
 
 const Homepage = () => {
