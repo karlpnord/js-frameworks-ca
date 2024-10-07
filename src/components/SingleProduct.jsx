@@ -1,10 +1,20 @@
-import React from 'react';
 import RatingStars from './RatingStars';
-import Button from './Button';
+import Button from './ui/Button';
 import Reviews from './Reviews';
 import { FaCartPlus } from "react-icons/fa6";
+import { useState } from 'react';
+import AddProductModal from './AddProductModal';
+import { useCartActions } from '../hooks/useCartActions';
 
 const SingleProduct = ({ data }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const { confirmAdd } = useCartActions();
+
+  const clickHandler = () => {
+    confirmAdd(data);
+    setModalOpen(true);
+  }
+
   return (
     <div className='border border-gray-300 flex flex-col p-6 my-10 dark:bg-zinc-800 dark:border-zinc-700 font-inter max-w-[1000px] lg:mx-auto'>
       <div className='flex flex-col md:flex-row gap-2 md:gap-10 mb-8'>
@@ -23,12 +33,18 @@ const SingleProduct = ({ data }) => {
           ) : (
             <span className="text-2xl font-bold text-gray-900 dark:text-white">${data.discountedPrice?.toFixed(2)}</span>
           )}
-          <Button icon={<FaCartPlus className='text-xl'/>}/>
+          <Button type={'primary'} text={'Add to cart'} icon={<FaCartPlus className='text-xl'/>} handler={clickHandler}/>
         </div>
       </div>
       <hr className='border-gray-300 mb-6 dark:border-zinc-700'/>
       <h3 className='text-2xl font-semibold mb-4 dark:text-gray-100'>Reviews</h3>
       <Reviews data={data.reviews}/>
+      {modalOpen && (
+        <AddProductModal 
+          product={data}
+          setModal={setModalOpen}
+        />
+      )}
     </div>
   )
 };
