@@ -5,9 +5,11 @@ This project is part of a course assignment during my Front-End Development stud
 
 ## Screenshot
 
-Here is a screenshot of the application to showcase the UI:
+Here is a screenshot of the application to showcase the UI in light and dark mode:
 
 ![Screenshot of the application](./src/assets/Screenshot.jpg)
+
+![Screenshot of the application](./src/assets/Screenshot2.jpg)
 
 ### Features
 - Browse products with search input
