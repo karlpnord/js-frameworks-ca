@@ -3,6 +3,12 @@
 ### Introduction
 This project is part of a course assignment during my Front-End Development studies at Noroff, where the goal is to apply my knowledge of React to build a fully functional e-commerce store. The application allows users to browse products, search for products, a fully functional cart and complete a purchase process. Throughout this project, I focused on implementing key React concepts such as component-based architecture, state management using useState and useReducer, and context management using useContext. Additionally, the project incoroporates API integration, responsive design, and a streamlined user interface to create a seamless shopping experience.
 
+## Screenshot
+
+Here is a screenshot of the application to showcase the UI:
+
+![Screenshot of the application](./src/assets/Screenshot.jpg)
+
 ### Features
 - Browse products with search input
 - Add and remove items from cart
