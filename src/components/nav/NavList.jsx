@@ -41,9 +41,7 @@ const NavList = ({navbarOpen, toggleNavbar}) => {
           <span>Contact</span>
         </NavLink>
       </li>
-      <li className='flex items-center justify-center gap-2 text-lg border border-gray-200 px-12 py-4 dark:bg-zinc-800 dark:border-gray-700 bg-white hover:bg-gray-100 dark:hover:bg-zinc-600 transition'>
-        <DarkModeToggle />
-      </li>
+      <DarkModeToggle />
     </ul>
   )
 };

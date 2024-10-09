@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import CartContext from '../../services/providers/CartContext';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
-import CartModal from '../../components/CartModal';
-import CartList from '../../components/CartList';
+import CartModal from '../../components/cart/CartModal';
+import CartList from '../../components/cart/CartList';
 import { useCartActions } from '../../hooks/useCartActions';
 
 const Checkout = () => {
@@ -12,7 +12,7 @@ const Checkout = () => {
 
   const itemPendingRemoval = products.find(item => item.isPendingRemoval);
 
-  const { 
+  const {
     confirmRemove,
     cancelRemove,
     removeItem,
@@ -22,7 +22,7 @@ const Checkout = () => {
   } = useCartActions();
 
   return (
-    <div className='flex-1 container font-inter lg:max-w-[1000px] mx-auto'>
+    <main className='flex-1 container font-inter lg:max-w-[1000px] mx-auto'>
       <div className='flex flex-col lg:flex-row gap-4 px-6 py-8 my-14 border border-gray-300 bg-white dark:bg-zinc-800 dark:border-zinc-700'>
         <div className='flex-1 p-3 flex flex-col gap-4'>
           <h1 className='font-semibold text-2xl text-gray-900 dark:text-gray-50'>Items in Cart</h1>
@@ -61,7 +61,7 @@ const Checkout = () => {
           />
         )}
       </div>
-    </div>
+    </main>
   )
 };
 

@@ -1,15 +1,17 @@
 import SearchAutoComplete from "../../components/form/SearchAutoComplete";
 import { useApi } from "../../hooks/useApi";
-import ProductContainer from "../../components/ProductContainer";
+import ProductContainer from "../../components/all-products/ProductContainer";
 import Loader from "../../components/ui/Loader";
 import { useState } from 'react';
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
 const Homepage = () => {
   const [searchValue, setSearchValue] = useState('');
-  const { data, isLoading, isError } = useApi('https://v2.api.noroff.dev/online-shop');
+  const { data, isLoading, isError } = useApi(apiBaseUrl);
   
   return (
-    <div className='dark:bg-zinc-900 bg-zinc-100 pb-6 min-h-dvh'>
+    <main className='dark:bg-zinc-900 bg-zinc-100 pb-6 min-h-dvh'>
       <div className='container mx-auto flex flex-col py-6 px-4'>
         <div className="flex flex-col gap-6 md:flex-row justify-between mt-6">
           <h1 className="text-2xl font-semibold dark:text-gray-200">Our Products</h1>
@@ -21,7 +23,7 @@ const Homepage = () => {
           <ProductContainer data={data} searchValue={searchValue}/>
         </div>
       </div>
-    </div>
+    </main>
   )
 };
 

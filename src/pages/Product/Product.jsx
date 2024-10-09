@@ -1,16 +1,18 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Loader from '../../components/ui/Loader';
-import SingleProduct from '../../components/SingleProduct';
+import SingleProduct from '../../components/single-product/SingleProduct';
 import { useApi } from '../../hooks/useApi';
+
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Product = () => {
   const { id } = useParams();
-  const url = `https://v2.api.noroff.dev/online-shop/${id}`;
+  const url = `${apiBaseUrl}/${id}`;
   const { data, isLoading, isError } = useApi(url);
 
   return (
-    <div className='pb-6'>
+    <main className='pb-6'>
       <div className='container mx-auto py-6 px-4'>
         <div>
           {isLoading && <div className='flex justify-center items-center mt-40'><Loader /></div>}
@@ -18,7 +20,7 @@ const Product = () => {
           <SingleProduct data={data}/>
         </div>
       </div>
-    </div>
+    </main>
   )
 };
 
