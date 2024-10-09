@@ -17,6 +17,7 @@ Here is a screenshot of the application to showcase the UI:
 - Modal confirmations
 - API integration for fetching products and singleproduct
 - Responsive design for mobile, tablet and desktop
+- Dark and Light mode
 
 ### Technologies Used
 - **React**: Core framework for building the user interface.
