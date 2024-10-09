@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { FaBars, FaCartShopping, FaXmark, FaStore } from "react-icons/fa6";
-import NavList from '../NavList';
+import NavList from '../nav/NavList';
 import { Link } from 'react-router-dom';
 import CartContext from '../../services/providers/CartContext';
 

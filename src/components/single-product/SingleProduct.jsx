@@ -1,10 +1,10 @@
-import RatingStars from './RatingStars';
-import Button from './ui/Button';
-import Reviews from './Reviews';
+import RatingStars from '../RatingStars';
+import Button from '../ui/Button';
+import Reviews from '../Reviews';
 import { FaCartPlus } from "react-icons/fa6";
 import { useState } from 'react';
 import AddProductModal from './AddProductModal';
-import { useCartActions } from '../hooks/useCartActions';
+import { useCartActions } from '../../hooks/useCartActions';
 
 const SingleProduct = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);

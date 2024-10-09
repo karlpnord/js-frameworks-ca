@@ -16,7 +16,7 @@ const CheckoutSuccess = () => {
   });
 
   return (
-    <div className='container mx-auto flex-1 px-4 my-10 font-inter flex justify-center items-center'>
+    <main className='container mx-auto flex-1 px-4 my-10 font-inter flex justify-center items-center'>
       <div className='flex flex-col bg-white'>
         {isLoading ? (
           <div className='flex flex-col gap-4 justify-center items-center md:min-w-[540px] md:min-h-[300px] py-8 px-12 border dark:bg-zinc-800 border-gray-300 dark:border-zinc-700'>
@@ -35,7 +35,7 @@ const CheckoutSuccess = () => {
           </div>
         )}
       </div>
-    </div>
+    </main>
   )
 };
 
