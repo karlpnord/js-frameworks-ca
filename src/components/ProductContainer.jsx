@@ -16,7 +16,7 @@ const ProductContainer = ({ data, searchValue }) => {
           <ProductCard key={item.id} data={item}/>
         ))
       ) : (
-        <div className='dark:text-gray-200'>No products matching {searchValue}</div>
+        <div className='dark:text-gray-200 font-semibold text-lg'>No products matching {searchValue}</div>
       )}
     </div>
   )

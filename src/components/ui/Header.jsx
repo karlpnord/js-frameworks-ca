@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { FaBars, FaCartShopping, FaX, FaStore } from "react-icons/fa6";
+import { FaBars, FaCartShopping, FaXmark, FaStore } from "react-icons/fa6";
 import NavList from '../NavList';
 import { Link } from 'react-router-dom';
 import CartContext from '../../services/providers/CartContext';
@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header className='border-b border-gray-300 dark:bg-zinc-800 dark:border-zinc-700'>
+    <header className='border-b border-gray-300 bg-white dark:bg-zinc-800 dark:border-zinc-700'>
       <nav className='container mx-auto flex justify-between items-center py-6 px-4 relative'>
         <Link to='/' className='flex items-center gap-2'>
           <FaStore className='text-3xl text-blue-600'/>
@@ -22,7 +22,7 @@ const Header = () => {
         <NavList navbarOpen={navbar} toggleNavbar={toggleNavbar}/>
         <div className='flex gap-4'>
           <button onClick={toggleNavbar} className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'>
-            {navbar ? <FaX/> : <FaBars/>}
+            {navbar ? <FaXmark/> : <FaBars/>}
           </button>
           <Link to='/checkout' className='flex items-center pl-4 border-l border-gray-300 dark:border-zinc-700'>
             <FaCartShopping className='text-xl text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition'/>
