@@ -10,7 +10,7 @@ const Product = () => {
   const { data, isLoading, isError } = useApi(url);
 
   return (
-    <div className='dark:bg-zinc-900 bg-white pb-6'>
+    <div className='pb-6'>
       <div className='container mx-auto py-6 px-4'>
         <div>
           {isLoading && <div className='flex justify-center items-center mt-40'><Loader /></div>}

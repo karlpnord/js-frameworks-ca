@@ -16,7 +16,7 @@ const SingleProduct = ({ data }) => {
   }
 
   return (
-    <div className='border border-gray-300 flex flex-col p-6 my-10 dark:bg-zinc-800 dark:border-zinc-700 font-inter max-w-[1000px] lg:mx-auto'>
+    <div className='border border-gray-300 flex flex-col p-6 my-10 bg-white dark:bg-zinc-800 dark:border-zinc-700 font-inter max-w-[1000px] lg:mx-auto'>
       <div className='flex flex-col md:flex-row gap-2 md:gap-10 mb-8'>
         <div className='md:w-1/2'>
           <img className='shadow-md mb-2 max-h-[500px]' src={data.image?.url}/>

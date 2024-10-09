@@ -7,7 +7,6 @@ import { useState } from 'react';
 const Homepage = () => {
   const [searchValue, setSearchValue] = useState('');
   const { data, isLoading, isError } = useApi('https://v2.api.noroff.dev/online-shop');
-  isError && <div>Error displaying products</div>
   
   return (
     <div className='dark:bg-zinc-900 bg-zinc-100 pb-6 min-h-dvh'>

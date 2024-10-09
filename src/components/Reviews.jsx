@@ -7,7 +7,7 @@ const Reviews = ({ data }) => {
     <div className='grid md:grid-cols-2 gap-x-6 gap-y-4'>
       {data?.length > 0 ? (
         data.map(item => (
-          <div key={item.id} className='flex flex-col border border-gray-300 p-3 w-full dark:border-zinc-700'>
+          <div key={item.id} className='flex flex-col border border-gray-300 bg-gray-100 p-3 w-full dark:border-zinc-700'>
             <div className='flex items-center gap-2'>
               <FaCircleUser className='text-2xl text-zinc-500 dark:text-blue-500'/>
               <h3 className='font-semibold text-lg dark:text-gray-50'>{item.username}</h3>
