@@ -1,6 +1,6 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
-const Button = ({ icon, text, handler, type }) => {
+const Button = ({ icon, text, handler, type = 'secondary' }) => {
 
   return (
     <button 
@@ -22,6 +22,13 @@ const Button = ({ icon, text, handler, type }) => {
       <span>{text}</span>
     </button>
   )
+};
+
+Button.propTypes = {
+  icon: PropTypes.element,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  type: PropTypes.oneOf(['primary', 'secondary']),
 };
 
 export default Button;

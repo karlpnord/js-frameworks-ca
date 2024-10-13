@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import Input from './Input';
 import Button from '../ui/Button';
 import { yupResolver } from '@hookform/resolvers/yup';
-import yupScheme from '../../utils/yupScheme';
+import contactFormScheme from '../../utils/contactFormScheme';
 
 const ContactForm = ({ formSuccess }) => {
   const { 
@@ -11,7 +11,7 @@ const ContactForm = ({ formSuccess }) => {
     reset,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(yupScheme),
+    resolver: yupResolver(contactFormScheme),
   });
 
   const onSubmit = (data) => {
