@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const schema = yup
+const contactFortSchema = yup
   .object({
     fullName: yup
       .string()
@@ -12,4 +12,4 @@ const schema = yup
   })
   .required();
 
-export default schema;
+export default contactFortSchema;

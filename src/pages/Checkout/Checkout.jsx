@@ -23,7 +23,7 @@ const Checkout = () => {
 
   return (
     <main className='flex-1 container font-inter lg:max-w-[1000px] mx-auto'>
-      <div className='flex flex-col lg:flex-row gap-4 px-6 py-8 my-14 border border-gray-300 bg-white dark:bg-zinc-800 dark:border-zinc-700'>
+      <div className='flex flex-col lg:divide-x-[1px] divide-gray-300 dark:divide-zinc-700 lg:flex-row gap-4 px-6 py-8 my-14 border border-gray-300 bg-white dark:bg-zinc-800 dark:border-zinc-700'>
         <div className='flex-1 p-3 flex flex-col gap-4'>
           <h1 className='font-semibold text-2xl text-gray-900 dark:text-gray-50'>Items in Cart</h1>
           <CartList 
@@ -33,7 +33,6 @@ const Checkout = () => {
             onDecrement={decrementItem}
           />
         </div>
-        <vr className='border border-gray-200 dark:border-zinc-700'/>
         <div className='flex flex-col flex-1 gap-4 bg-white dark:bg-zinc-800 p-3 max-h-fit'>
           <h2 className='font-semibold text-2xl text-gray-900 dark:text-gray-100'>Summary</h2>
           <div className='text-gray-600 dark:text-gray-400 text-sm'>

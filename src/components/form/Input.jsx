@@ -1,4 +1,6 @@
-const Input = ({ register, label, name, required, min, max, error, type }) => {
+import PropTypes from 'prop-types';
+
+const Input = ({ register, label, name, required = false, min, max, error, type = 'text' }) => {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={name} className='text-sm text-gray-900 dark:text-gray-100'>
@@ -18,6 +20,17 @@ const Input = ({ register, label, name, required, min, max, error, type }) => {
       <div className="text-red-500 text-sm">{error}</div>
     </div>
   )
+};
+
+Input.propTypes = {
+  register: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  error: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default Input;
